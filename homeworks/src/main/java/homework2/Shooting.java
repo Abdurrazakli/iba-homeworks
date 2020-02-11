@@ -11,13 +11,6 @@ public class Shooting {
     final static char HITTED_SYMBOL = 'x';
     final static char defaultCharacter = '-';
 
-    public static void main1(String[] args) {
-        BOARD = new char[SQUARE_SIZE][SQUARE_SIZE];
-        setBOARD();
-        generateRandomTarget();
-        showStartMessage();
-        printBoard();
-    }
     public static void main(String[] args) {
         int yCoordinate;
         int xCoordinate;
