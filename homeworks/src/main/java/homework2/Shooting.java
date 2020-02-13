@@ -14,7 +14,6 @@ public class Shooting {
     public static void main(String[] args) {
         int yCoordinate;
         int xCoordinate;
-           while(true){
                BOARD = new char[SQUARE_SIZE][SQUARE_SIZE];
                setBOARD();
                generateRandomTarget();
@@ -29,7 +28,6 @@ public class Shooting {
                    }
                    printBoard();
                }while(!endGame);
-           }
     }
     private static boolean isHit(int x, int y){
         if(BOARD[y][x] != TARGET_SYMBOL ){
