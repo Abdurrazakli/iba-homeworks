@@ -54,8 +54,8 @@ public class Shooting {
     }
     private static void generateRandomTarget(){
         Random random = new Random();
-        int x = random.nextInt(5);
-        int y = random.nextInt(5);
+        int x = random.nextInt(SQUARE_SIZE);
+        int y = random.nextInt(SQUARE_SIZE);
         BOARD[y][x] = TARGET_SYMBOL;
     }
     private static int getCoordinateFromUser(String coordinateName) {
