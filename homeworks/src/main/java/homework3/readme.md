@@ -6,7 +6,7 @@ You will need to write a "week planner" program
 #### Technical requirements
 - Create a two-dimensional array of 7x2 strings 
 `String[][] scedule = new String[7][2]`
-- Fill the matrix with the following values: weekday + the main task for the current day:
+- Fill t0he matrix with the following values: weekday + the main task for the current day:
   `scedule[0][0] = "Sunday";`  
   `scedule[0][1] = "do home work";`  
   `scedule[1][0] = "Monday";`  
