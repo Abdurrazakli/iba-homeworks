@@ -9,15 +9,7 @@ public class Human {
    public Pet pet;
    public Human mother;
    public Human father;
-   public String[][] schedule = {
-           {"Sunday","go to gym"},
-           {"Monday","go to Club"},
-           {"Tuesday","read a book"},
-           {"Wednesday","code smth"},
-           {"Thursday","just sleep"},
-           {"Friday","prepare for the party"},
-           {"Saturday","do whatever should be done"}
-   };
+   public String[][] schedule;
 
     public Human(){}
 
