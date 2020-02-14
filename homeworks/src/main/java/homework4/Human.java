@@ -1,14 +1,15 @@
 package homework4;
 
 public class Human {
-   private String name;
-   private String surname;
-   private int year;
-   private int age;
-   private Pet pet;
-   private Human mother;
-   private Human father;
-   private String[][] schedule = {
+   public String name;
+   public String surname;
+   public int year;
+   public int age;
+   public int iq;
+   public Pet pet;
+   public Human mother;
+   public Human father;
+   public String[][] schedule = {
            {"Sunday","go to gym"},
            {"Monday","go to Club"},
            {"Tuesday","read a book"},
@@ -18,77 +19,50 @@ public class Human {
            {"Saturday","do whatever should be done"}
    };
 
-    public String getName() {
-        return name;
-    }
+    public Human(){}
 
-    public void setName(String name) {
+    public Human(String name, String surname, int year, int age, int iq,
+                 Pet pet, Human mother, Human father, String[][] schedule) {
         this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
         this.surname = surname;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
         this.year = year;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
         this.age = age;
-    }
-
-    public Pet getPet() {
-        return pet;
-    }
-
-    public void setPet(Pet pet) {
+        this.iq = iq;
         this.pet = pet;
-    }
-
-    public Human getMother() {
-        return mother;
-    }
-
-    public void setMother(Human mother) {
         this.mother = mother;
-    }
-
-    public Human getFather() {
-        return father;
-    }
-
-    public void setFather(Human father) {
         this.father = father;
-    }
-
-    //fixme arrays should be set/get different
-    public String[][] getSchedule() {
-        return schedule;
-    }
-
-    public void setSchedule(String[][] schedule) {
         this.schedule = schedule;
     }
 
-    public void greetPet(){
-        System.out.printf("Hello, %s\n",pet.getNickname());
+    public Human(String name, String surname, int year, Human mother, Human father) {
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+        this.mother = mother;
+        this.father = father;
     }
+
+    public Human(String name, String surname, int year) {
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+    }
+
+    public void greetPet(){
+        System.out.printf("Hello, %s\n",pet.nickname);
+    }
+
     public void describePet(){
         System.out.printf("I have a %s, he is %d years old, he is %s\n",
-                pet.getSpecies(), pet.getAge(),
+                pet.species, pet.age,
                 pet.isSly() ? "very sly" : "almost not sly");
+    }
+
+    @Override
+    public String toString(){
+        return String.format("Human{name='%s', surname='%s'," +
+                " year=%d, iq=%d, mother=%s %s, father=%s %s," +
+                " pet=dog{%s}\n",name,surname,year,iq,mother.name,mother.surname,
+                father.name,father.surname,pet.toString());
     }
 }
