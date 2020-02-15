@@ -2,6 +2,7 @@ package homework5;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Human {
    private String name;
@@ -81,6 +82,19 @@ public class Human {
         this.iq = iq;
         this.family = family;
         this.schedule = schedule;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Human human = (Human) o;
+        return year == human.year;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(year);
     }
     /* public Pet getPet() {
         return pet;
