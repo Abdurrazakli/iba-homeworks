@@ -1,7 +1,4 @@
 package homework5;
-
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.Objects;
 
 public class Human {
@@ -11,9 +8,6 @@ public class Human {
    private int age;
    private int iq;
    private Family family;
-   /*private Pet pet;
-   private Human mother;
-   private Human father;*/
    private String[][] schedule;
     @Override
     public String toString(){
@@ -106,9 +100,9 @@ public class Human {
     public int hashCode() {
         return Objects.hash(year);
     }
-    //fixme arrays should be set/get different
+
     public String[][] getSchedule() {
-        String temp[][] = new String[schedule.length][schedule[0].length];
+        String[][] temp = new String[schedule.length][schedule[0].length];
         for (int i = 0; i < schedule.length ; i++) {
             for (int j = 0; j < schedule[i].length; j++) {
                 temp[i][j] = schedule[i][j];
@@ -126,42 +120,4 @@ public class Human {
         }
         this.schedule = temp;
     }
-
-    /* public Pet getPet() {
-        return pet;
-    }
-
-    public void setPet(Pet pet) {
-        this.pet = pet;
-    }
-
-    public Human getMother() {
-        return mother;
-    }
-
-    public void setMother(Human mother) {
-        this.mother = mother;
-    }
-
-    public Human getFather() {
-        return father;
-    }
-
-    public void setFather(Human father) {
-        this.father = father;
-    }*/
-
-
-
-    /*
-    public void greetPet(){
-        System.out.printf("Hello, %s\n",pet.getNickname());
-    }
-    public void describePet(){
-        System.out.printf("I have a %s, he is %d years old, he is %s\n",
-                pet.getSpecies(), pet.getAge(),
-                pet.isSly() ? "very sly" : "almost not sly");
-    }
-
-     */
 }
