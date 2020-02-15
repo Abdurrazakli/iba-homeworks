@@ -46,6 +46,8 @@ public class Family {
     public Family(Human mother, Human father) {
         this.mother = mother;
         this.father = father;
+        mother.setFamily(this);
+        father.setFamily(this);
         children = new ArrayList<Human>();
     }
 
@@ -60,6 +62,16 @@ public class Family {
         children.remove(index - 1);
         }
         return true;
+    }
+    public int countFamily(){
+        int count = children.size();
+        if(father.getFamily().equals(this)){
+            count++;
+        }
+        if(mother.getFamily().equals(this)){
+            count++;
+        }
+        return count;
     }
     @Override
     public String toString() {
