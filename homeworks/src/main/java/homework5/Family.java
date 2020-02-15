@@ -46,10 +46,6 @@ public class Family {
         return children;
     }
 
-    public void setChildren(ArrayList<Human> children) {
-        this.children = children;
-    }
-
     public Pet getPet() {
         return pet;
     }
@@ -90,7 +86,15 @@ public class Family {
     }
     @Override
     public String toString() {
-        return String.format("Family{mother=%s, father=%s, children=%s, pet=%s}",
-                mother.toString(), father.toString(), children.toString(), pet.toString());
+        String result = String.format("Family{mother=%s, father=%s",
+                mother.toString(), father.toString());
+        if(children.size() > 0){
+            result += String.format(", children=%s",children.toString());
+        }
+        if(pet != null){
+            result += String.format(", pet=%s",pet.toString());
+        }
+        result += "}";
+        return result;
     }
 }

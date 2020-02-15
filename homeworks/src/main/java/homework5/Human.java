@@ -18,7 +18,7 @@ public class Human {
     @Override
     public String toString(){
         return String.format("Human{name='%s', surname='%s'," +
-                        " year=%d, iq=%d, schedule=%s",name,surname,year,iq, Arrays.toString(schedule));
+                        " year=%d, iq=%d, schedule=%s",name,surname,year,iq, getScheduleAsAString());
     }
     public String getName() {
         return name;
@@ -74,13 +74,12 @@ public class Human {
     }
     public Human(){}
 
-    public Human(String name, String surname, int year, int age, int iq, Family family, String[][] schedule) {
+    public Human(String name, String surname, int year, int age, int iq, String[][] schedule) {
         this.name = name;
         this.surname = surname;
         this.year = year;
         this.age = age;
         this.iq = iq;
-        this.family = family;
         this.schedule = schedule;
     }
 
@@ -91,11 +90,43 @@ public class Human {
         Human human = (Human) o;
         return year == human.year;
     }
-
+    public String getScheduleAsAString(){
+        StringBuilder sb = new StringBuilder();
+        for (String[] x: schedule
+             ) {
+            for (String s: x
+                 ) {
+                sb.append(s).append(" ");
+            }
+            sb.append(",");
+        }
+        return sb.toString();
+    }
     @Override
     public int hashCode() {
         return Objects.hash(year);
     }
+    //fixme arrays should be set/get different
+    public String[][] getSchedule() {
+        String temp[][] = new String[schedule.length][schedule[0].length];
+        for (int i = 0; i < schedule.length ; i++) {
+            for (int j = 0; j < schedule[i].length; j++) {
+                temp[i][j] = schedule[i][j];
+            }
+        }
+        return temp;
+    }
+
+    public void setSchedule(String[][] schedule) {
+        String temp[][] = new String[schedule.length][schedule[0].length];
+        for (int i = 0; i < schedule.length ; i++) {
+            for (int j = 0; j < schedule[i].length; j++) {
+                temp[i][j] = schedule[i][j];
+            }
+        }
+        this.schedule = temp;
+    }
+
     /* public Pet getPet() {
         return pet;
     }
@@ -120,26 +151,7 @@ public class Human {
         this.father = father;
     }*/
 
-    //fixme arrays should be set/get different
-    public String[][] getSchedule() {
-        String temp[][] = new String[schedule.length][schedule[0].length];
-        for (int i = 0; i < schedule.length ; i++) {
-            for (int j = 0; j < schedule[i].length; j++) {
-                temp[i][j] = schedule[i][j];
-            }
-        }
-        return temp;
-    }
 
-    public void setSchedule(String[][] schedule) {
-        String temp[][] = new String[schedule.length][schedule[0].length];
-        for (int i = 0; i < schedule.length ; i++) {
-            for (int j = 0; j < schedule[i].length; j++) {
-                temp[i][j] = schedule[i][j];
-            }
-        }
-        this.schedule = temp;
-    }
 
     /*
     public void greetPet(){
