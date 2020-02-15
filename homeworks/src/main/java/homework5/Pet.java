@@ -22,6 +22,11 @@ public class Pet {
         return trickLevel > 50;
     }
 
+    public Pet(String species, String nickname) {
+        this.species = species;
+        this.nickname = nickname;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
