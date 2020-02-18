@@ -2,22 +2,13 @@ package homework7;
 
 public class Main {
     public static void main(String[] args) {
-        int MAX_LIMIT = 100000000;
-        Pet p = new Pet(Species.CAT,"Kitty");
-        System.out.println(p.toString());
-        Human man = new Human("Rain","Josh",1999,(2020 - 1999),99,
-                new String[][]{
-                {DayOfWeek.SUNDAY.name(),"task 1"},
-                {DayOfWeek.MONDAY.name(),"task 1"},
-                {DayOfWeek.TUESDAY.name(),"task 1"},
-                {DayOfWeek.WEDNESDAY.name(),"task 1"},
-                {DayOfWeek.THURSDAY.name(),"task 1"},
-                {DayOfWeek.FRIDAY.name(),"task 1"},
-                {DayOfWeek.SATURDAY.name(),"task 1"},
-        });
+        Dog dog1 = new Dog("Scooby-doo");
+        dog1.respond();
+        System.out.printf("Dog: %s",dog1.getSpecies().toString());
+        dog1.eat();
+        DomesticCat cat1 = new DomesticCat("Tom");
+        cat1.respond();
+        cat1.eat();
 
-        for (int i = 0; i < MAX_LIMIT; i++) {
-            Human k = new Human();
-        }
     }
 }

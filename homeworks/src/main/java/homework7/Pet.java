@@ -9,11 +9,12 @@ public abstract class Pet {
     private int age;
     private int trickLevel;
     private String[] habits;
-    //todo have deal with theese methods
+
     public void eat(){
         System.out.println("I am eating!");
     }
     public abstract void respond();
+    //todo I dont know what to with fuel
     public void fuel(){
         System.out.println("I need to cover it up");
     }

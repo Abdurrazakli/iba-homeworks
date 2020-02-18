@@ -117,6 +117,9 @@ public class Human {
         }
         return temp;
     }
+    public void greetPet(){
+        System.out.println("Actually,there is not any pet :D");
+    }
 
     public void setSchedule(String[][] schedule) {
         String temp[][] = new String[schedule.length][schedule[0].length];
