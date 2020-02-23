@@ -19,5 +19,6 @@ public class Main {
         for (int i = 0; i < MAX_LIMIT; i++) {
             Human k = new Human();
         }
+        //fixme everything is allright
     }
 }
