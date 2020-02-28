@@ -1,12 +1,13 @@
 package homework6;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Objects;
 
 public class Family {
     private Human mother;
     private Human father;
-    private ArrayList<Human> children;
+    private Human[] children;
     private Pet pet;
 
     @Override
@@ -47,7 +48,7 @@ public class Family {
     //fixme non-primitive types should not be handled this way i think
 
 
-    public ArrayList<Human> getChildren() {
+    public Human[] getChildren() {
         return children;
     }
 
@@ -64,23 +65,56 @@ public class Family {
         this.father = father;
         mother.setFamily(this);
         father.setFamily(this);
-        children = new ArrayList<Human>();
+        children = new Human[0];
     }
 
     public void addChild(Human child){
-        children.add(child);
+        Human[] temp = Arrays.copyOf(children,children.length + 1);
+        temp[temp.length - 1] = child;
+        children = temp;
         child.setFamily(this);
     }
     public boolean deleteChild(int index){
-        if(index - 1 >= children.size()) return false;
+        if(index - 1 >= children.length) return false;
         else{
-        children.get(index - 1).setFamily(null);
-        children.remove(index - 1);
+            children[index - 1].setFamily(null);
+            Human[] temp = new Human[children.length - 1];
+            for (int i = 0,inx = 0; i < children.length; i++) {
+                if(i == index - 1){
+                    continue;
+                }
+                else {
+                    temp[inx++] = children[i];
+                }
+            }
+            children = temp;
         }
         return true;
     }
+    public boolean deleteChild(Human child){
+        int index = -1;
+        for (int i = 0; i < children.length; i++) {
+                if(children[i].equals(child)){
+                    index = i;
+                    break;
+                }
+        }
+        if(index == -1) return false;
+        else{
+            Human[] temp = new Human[children.length - 1];
+            for (int i = 0,inx = 0; i < children.length ; i++) {
+                if(i==index){
+                    continue;
+                }else{
+                    temp[inx++] = children[i];
+                }
+            }
+            children = temp;
+            return true;
+        }
+    }
     public int countFamily(){
-        int count = children.size();
+        int count = children.length;
         if(father.getFamily().equals(this)){
             count++;
         }
@@ -91,15 +125,16 @@ public class Family {
     }
     @Override
     public String toString() {
-        String result = String.format("Family{mother=%s, father=%s",
+        String result = String.format("Family{mother=%s, \nfather=%s",
                 mother.toString(), father.toString());
-        if(children.size() > 0){
-            result += String.format(", children=%s",children.toString());
+        if(children.length > 0){
+            result += String.format(", \nchildren=%s",Arrays.toString(children));
         }
         if(pet != null){
-            result += String.format(", pet=%s",pet.toString());
+            result += String.format(", \npet=%s",pet.toString());
         }
         result += "}";
         return result;
     }
+
 }

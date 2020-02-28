@@ -15,10 +15,10 @@ public class Main {
                 {DayOfWeek.FRIDAY.name(),"task 1"},
                 {DayOfWeek.SATURDAY.name(),"task 1"},
         });
-
-        for (int i = 0; i < MAX_LIMIT; i++) {
-            Human k = new Human();
-        }
+        System.out.println(man);
+//        for (int i = 0; i < MAX_LIMIT; i++) {
+//            Human k = new Human();
+//        }
         //fixme everything is allright
     }
 }

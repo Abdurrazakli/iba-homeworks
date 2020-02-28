@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class Family {
-    private Human mother;
-    private Human father;
+    private Woman mother;
+    private Man father;
     private ArrayList<Human> children;
     private Pet pet;
 
@@ -29,11 +29,11 @@ public class Family {
         return Objects.hash(mother, father);
     }
 
-    public Human getMother() {
+    public Woman getMother() {
         return mother;
     }
 
-    public void setMother(Human mother) {
+    public void setMother(Woman mother) {
         this.mother = mother;
     }
 
@@ -41,7 +41,7 @@ public class Family {
         return father;
     }
 
-    public void setFather(Human father) {
+    public void setFather(Man father) {
         this.father = father;
     }
     //fixme non-primitive types should not be handled this way i think
@@ -59,7 +59,7 @@ public class Family {
         this.pet = pet;
     }
 
-    public Family(Human mother, Human father) {
+    public Family(Woman mother, Man father) {
         this.mother = mother;
         this.father = father;
         mother.setFamily(this);
