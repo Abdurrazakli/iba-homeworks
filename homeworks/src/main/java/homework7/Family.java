@@ -79,6 +79,9 @@ public class Family {
         }
         return true;
     }
+    public boolean deleteChild(Human child){
+        return children.remove(child);
+    }
     public int countFamily(){
         int count = children.size();
         if(father.getFamily().equals(this)){
