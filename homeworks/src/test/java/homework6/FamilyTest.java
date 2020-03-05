@@ -98,9 +98,9 @@ class FamilyTest {
         assertEquals(3,celebrities.countFamily(),
                 "Family members were not count in a right way");
     }
-
     @Test
-    void testToString() {
-
+    void equalsTest(){
+        Family testFamily = new Family(mother,father);
+        assertEquals(celebrities,testFamily,"Families are not equal");
     }
 }

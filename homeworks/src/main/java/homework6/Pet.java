@@ -32,17 +32,20 @@ public class Pet {
         System.out.println("Pet object is removed!");
         super.finalize();
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Pet pet = (Pet) o;
-        return species.equals(pet.species);
+        return age == pet.age &&
+                species == pet.species &&
+                nickname.equals(pet.nickname);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(species);
+        return Objects.hash(species, nickname, age);
     }
 
     @Override

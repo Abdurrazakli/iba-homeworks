@@ -91,12 +91,10 @@ public class Human {
         if (o == null || getClass() != o.getClass()) return false;
         Human human = (Human) o;
         return year == human.year &&
-                age == human.age &&
                 iq == human.iq &&
                 name.equals(human.name) &&
                 surname.equals(human.surname) &&
-                family.equals(human.family) &&
-                Arrays.equals(schedule, human.schedule);
+                getScheduleAsAString().equals(human.getScheduleAsAString());
     }
 
     public String getScheduleAsAString(){

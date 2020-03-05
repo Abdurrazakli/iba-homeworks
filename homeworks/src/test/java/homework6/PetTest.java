@@ -21,4 +21,16 @@ class PetTest {
         cat.setTrickLevel(trickLevel);
         assertEquals(expected,cat.toString());
     }
+    @Test
+    void equalsTestIfTwoObjectsSameReturnTrue(){
+        Pet cat = new Pet(Species.CAT,"Tom");
+        cat.setAge(10);
+        cat.setHabits(new String[]{"eat","sleep"});
+        cat.setTrickLevel(30);
+        Pet cat2 = new Pet(Species.CAT,"Tom");
+        cat2.setAge(10);
+        cat2.setHabits(new String[]{"eat","sleep"});
+        cat2.setTrickLevel(30);
+        assertEquals(cat,cat2,"Cats are not same");
+    }
 }
