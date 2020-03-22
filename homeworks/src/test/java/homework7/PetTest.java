@@ -1,7 +1,5 @@
 package homework7;
 
-import homework6.Pet;
-import homework6.Species;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -16,8 +14,8 @@ class PetTest {
         int age = 15;
         int trickLevel = 99;
         String[] habits = {"eating","running"};
-        String expected = "DOG{nickname='Tom', age=15, trickLevel=99, habits=[eating, running]}";
-        Pet cat = new Pet(specy,nickname);
+        String expected = "ROBOCAT{nickname='Tom', age=15, trickLevel=99, habits=[eating, running]}";
+        Pet cat = new RoboCat(nickname);
         cat.setAge(age);
         cat.setHabits(habits);
         cat.setTrickLevel(trickLevel);
@@ -25,11 +23,11 @@ class PetTest {
     }
     @Test
     void equalsTestIfTwoObjectsSameReturnTrue(){
-        Pet cat = new Pet(Species.CAT,"Tom");
+        Pet cat = new RoboCat("Tom");
         cat.setAge(10);
         cat.setHabits(new String[]{"eat","sleep"});
         cat.setTrickLevel(30);
-        Pet cat2 = new Pet(Species.CAT,"Tom");
+        Pet cat2 = new RoboCat("Tom");
         cat2.setAge(10);
         cat2.setHabits(new String[]{"eat","sleep"});
         cat2.setTrickLevel(30);

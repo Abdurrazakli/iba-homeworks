@@ -1,7 +1,5 @@
 package homework7;
 
-import homework7.Family;
-import homework7.Human;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -1,7 +1,5 @@
 package homework7;
 
-import homework6.DayOfWeek;
-import homework6.Human;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -10,7 +8,7 @@ class HumanTest {
 
     @Test
     void testToString() {
-        String expected = "Human{name='Rain', surname='Josh', year=1999, iq=99, schedule=SUNDAY task 1 ,MONDAY task 1 ,TUESDAY task 1 ,WEDNESDAY task 1 ,THURSDAY task 1 ,FRIDAY task 1 ,SATURDAY task 1 ,}";
+        String expected = "Human{name='Rain', surname='Josh', year=1999, iq=99, schedule=SUNDAY task 1 ,MONDAY task 1 ,TUESDAY task 1 ,WEDNESDAY task 1 ,THURSDAY task 1 ,FRIDAY task 1 ,SATURDAY task 1 ,";
         Human man = new Human("Rain","Josh",1999,(2020 - 1999),99,
                 new String[][]{
                         {DayOfWeek.SUNDAY.name(),"task 1"},
