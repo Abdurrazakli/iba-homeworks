@@ -13,56 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Main {
-    public static void main1(String[] args) {
-        Dog dog1 = new Dog("Scooby-doo");
-        dog1.respond();
-        System.out.printf("Dog: %s",dog1.getSpecies().toString());
-        dog1.eat();
-        DomesticCat cat1 = new DomesticCat("Tom");
-        cat1.respond();
-        cat1.eat();
-        Map<String, String> schedule = new HashMap<>();
-        schedule.put(DayOfWeek.SUNDAY.name(),"task 1");
-                schedule.put(DayOfWeek.SUNDAY.name(),"task 1");
-                schedule.put(DayOfWeek.MONDAY.name(),"task 1");
-                schedule.put(DayOfWeek.TUESDAY.name(),"task 1");
-                schedule.put(DayOfWeek.WEDNESDAY.name(),"task 1");
-                schedule.put(DayOfWeek.THURSDAY.name(),"task 1");
-                schedule.put(DayOfWeek.FRIDAY.name(),"task 1");
-                schedule.put(DayOfWeek.SATURDAY.name(),"task 1");
-        Man man = new Man("Rain","Josh",1999,(2020 - 1999),99, schedule);
-        System.out.println(man.toString());
-        CollectionFamilyDAO dao = new CollectionFamilyDAO();
-        dao.getFamilyByIndex(5);
-    }
-
-    public static void main2(String[] args) {
-        Map<String, String> schedule = new HashMap<>();
-        schedule.put(DayOfWeek.SUNDAY.name(),"task 1");
-        schedule.put(DayOfWeek.SUNDAY.name(),"task 1");
-        schedule.put(DayOfWeek.MONDAY.name(),"task 1");
-        schedule.put(DayOfWeek.TUESDAY.name(),"task 1");
-        schedule.put(DayOfWeek.WEDNESDAY.name(),"task 1");
-        schedule.put(DayOfWeek.THURSDAY.name(),"task 1");
-        schedule.put(DayOfWeek.FRIDAY.name(),"task 1");
-        schedule.put(DayOfWeek.SATURDAY.name(),"task 1");
-        Man man = new Man("Rain","Josh",1999,(2020 - 1999),99, schedule);
-        Woman woman = new Woman("Anna","yes");
-        FamilyService service = new FamilyService();
-        service.createNewFamily(man,woman);
-        Family family = service.getAllFamilies().get(0);
-      //  List<Boolean> collect = Stream.generate(() -> ((int)(Math.random() * 2)) == 0).limit(20).filter(s->s==true).collect(Collectors.toList());
-        //System.out.println(collect.size());
-        Human child= ((int)(Math.random() * 2)) == 0 ? new Woman() : new Man();
-        service.bornAChild(family,"Adil","Aytac");
-        service.getAllFamilies().get(0).getChildren().get(0).setAge(100);
-        System.out.println(service.getAllFamilies().get(0).getChildren().get(0).getAge());
-        service.deleteAllChildrenOlderThan(15);
-        System.out.println(service.getAllFamilies().get(0).getChildren().size());
-
-    }
-
-    public static void main(String[] args) {
+       public static void main(String[] args) {
         FamilyController controller = new FamilyController();
         //creating 3 families
         for (int i = 0; i < 3 ; i++) {
