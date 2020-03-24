@@ -14,7 +14,6 @@ public abstract class Pet {
         System.out.println("I am eating!");
     }
     public abstract void respond();
-    //todo I dont know what to with fuel
     public void fuel(){
         System.out.println("I need to cover it up");
     }
@@ -67,11 +66,6 @@ public abstract class Pet {
         this.habits = habits;
     }
 
-    @Override
-    protected void finalize() throws Throwable {
-        System.out.println("Pet object is removed!");
-        super.finalize();
-    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

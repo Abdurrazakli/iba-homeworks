@@ -81,11 +81,6 @@ public class Human {
     }
 
     @Override
-    protected void finalize() throws Throwable {
-        System.out.println("Human object is removed!");
-        super.finalize();
-    }
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
