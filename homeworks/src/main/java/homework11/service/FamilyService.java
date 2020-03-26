@@ -1,4 +1,4 @@
-package homework11;
+package homework11.service;
 
 import homework11.dao.CollectionFamilyDAO;
 import homework11.entity.Family;

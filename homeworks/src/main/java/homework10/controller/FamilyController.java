@@ -1,6 +1,6 @@
 package homework10.controller;
 
-import homework10.FamilyService;
+import homework10.service.FamilyService;
 import homework10.entity.Family;
 import homework10.entity.Human;
 import homework10.entity.pets.Pet;
