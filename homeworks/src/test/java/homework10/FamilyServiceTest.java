@@ -1,14 +1,14 @@
 package homework10;
 
-import homework9.entity.Family;
-import homework9.entity.Human;
-import homework9.entity.Man;
-import homework9.entity.Woman;
-import homework9.entity.pets.Dog;
-import homework9.entity.pets.Pet;
-import homework9.entity.pets.RoboCat;
-import homework9.service.FamilyService;
-import homework9.util.RandomComponents;
+import homework10.entity.Family;
+import homework10.entity.Human;
+import homework10.entity.Man;
+import homework10.entity.Woman;
+import homework10.entity.pets.Dog;
+import homework10.entity.pets.Pet;
+import homework10.entity.pets.RoboCat;
+import homework10.service.FamilyService;
+import homework10.util.RandomComponents;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
